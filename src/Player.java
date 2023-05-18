@@ -5,10 +5,14 @@ public class Player
     private String name;
     private String colour;
     private ArrayList<String> cardsOnHand;
-    private int roads = 15;
-    private int settlements = 5;
-    private int cities = 4;
     private ArrayList<String> initialResource;
+    private int builtRoads;
+    private int builtSettlements;
+    private int builtCities;
+    private int devCards;
+    private int maxRoads = 15;
+    private int maxSettlements = 5;
+    private int maxCities = 4;
 
     public Player(String name, String colour, ArrayList<String> initialResources)
     {
@@ -35,32 +39,38 @@ public class Player
     public void buyRoad()
     {
         if (cardsOnHand.containsAll(Bank.getRoadCost()))
+        {
             cardsOnHand.removeAll(Bank.getRoadCost());
-        else
+            builtRoads++;
+        } else
             System.out.println("Not enough resources");
     }
 
-    public void buySettlement()
-    {
+    public void buySettlement() {
         if (cardsOnHand.containsAll(Bank.getSettlementCost()))
+        {
             cardsOnHand.removeAll(Bank.getSettlementCost());
-        else
+        builtSettlements++;
+        } else
             System.out.println("Not enough resources");
     }
 
     public void buyCity()
     {
         if (cardsOnHand.containsAll(Bank.getCityCost()))
+        {
             cardsOnHand.removeAll(Bank.getCityCost());
-        else
+            builtCities++;
+        } else
             System.out.println("Not enough resources");
     }
 
     public void buyDevCard()
     {
-        if (cardsOnHand.containsAll(Bank.getDevCardCost()))
+        if (cardsOnHand.containsAll(Bank.getDevCardCost())) {
             cardsOnHand.removeAll(Bank.getDevCardCost());
-        else
+            devCards++;
+        } else
             System.out.println("Not enough resources");
     }
 

@@ -1,7 +1,8 @@
 import java.util.*;
 
 public class Bank {
-    private static Map<String, Integer> totalCardsInBank = Map.of("ore", 19, "wheat", 19, "brick", 19, "sheep", 19);
+    private static Map<String, Integer> totalCardsInBank =
+            Map.of("ore", 19, "wheat", 19, "brick", 19, "wood",19, "sheep", 19);
     private static List<String> roadCost = Arrays.asList("brick", "wood");
     private static List<String> settlementCost = Arrays.asList("brick", "wood", "sheep", "wheat");
     private static List<String> cityCost = Arrays.asList("wheat", "wheat", "ore", "ore", "ore");
